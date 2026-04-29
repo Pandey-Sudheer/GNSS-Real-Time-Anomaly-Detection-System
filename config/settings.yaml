@@ -1,0 +1,45 @@
+# GNSS System Configuration
+
+# NTRIP Settings
+ntrip:
+  caster: "ntrip.data.gnss.ga.gov.au"
+  port: 2101
+  mountpoint: "ALIC00AUS0"  # Alice Springs
+  username: "bikendra_01"
+  password: "Biku@9807"
+  latitude: -23.6701
+  longitude: 133.8855
+
+# Kafka Settings
+kafka:
+  bootstrap_servers: "localhost:9092"
+  topic: "gnss_topic"
+  processed_topic: "processed_gnss"
+  group_id: "gnss_consumer_group"
+  auto_offset_reset: "latest"
+
+# Spark Settings
+spark:
+  app_name: "GNSS_Anomaly_Detection"
+  master: "local[*]"
+  batch_interval: 2  # seconds
+  checkpoint_dir: "./checkpoints"
+
+# Anomaly Detection Thresholds
+anomaly_detection:
+  snr_threshold: 20.0
+  drift_threshold: 0.0001  # degrees (~11 meters)
+  min_satellites: 5
+  moving_avg_window: 10  # number of records
+
+# Storage
+storage:
+  output_dir: "./results"
+  csv_enabled: true
+  parquet_enabled: true
+
+# Dashboard
+dashboard:
+  port: 8501
+  refresh_interval: 2  # seconds
+  map_zoom: 15

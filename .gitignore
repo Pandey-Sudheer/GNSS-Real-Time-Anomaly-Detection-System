@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# IDE/editor
+.vscode/
+*.swp
+*.swo
+
+# Logs and local data
+*.log
+*.sqlite3
+.env*
+
+# Generated and runtime data
+.tmp/
+temp/
+
+# Large checkpoint data
+docker-data/checkpoints/
+results/checkpoints/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db

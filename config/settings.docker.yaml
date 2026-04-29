@@ -1,0 +1,39 @@
+# GNSS System Configuration for Docker
+
+ntrip:
+  caster: "ntrip.data.gnss.ga.gov.au"
+  port: 2101
+  mountpoint: "ALIC00AUS0"
+  username: "bikendra_01"
+  password: "Biku@9807"
+  latitude: -23.6701
+  longitude: 133.8855
+
+kafka:
+  bootstrap_servers: "kafka:9092"
+  topic: "gnss_topic"
+  processed_topic: "processed_gnss"
+  group_id: "gnss_consumer_group"
+  auto_offset_reset: "latest"
+
+spark:
+  app_name: "GNSS_Anomaly_Detection"
+  master: "local[*]"
+  batch_interval: 2
+  checkpoint_dir: "./checkpoints"
+
+anomaly_detection:
+  snr_threshold: 20.0
+  drift_threshold: 0.0001
+  min_satellites: 5
+  moving_avg_window: 10
+
+storage:
+  output_dir: "./results"
+  csv_enabled: true
+  parquet_enabled: true
+
+dashboard:
+  port: 8501
+  refresh_interval: 2
+  map_zoom: 15

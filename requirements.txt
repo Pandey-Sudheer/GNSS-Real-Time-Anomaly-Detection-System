@@ -1,0 +1,37 @@
+# Kafka
+kafka-python==2.0.2
+confluent-kafka==2.3.0
+
+# Spark
+pyspark==3.5.0
+
+# Data Processing
+pandas==2.1.3
+numpy==1.26.2
+
+# NMEA Parsing
+pynmea2==1.19.0
+pyrtcm==1.1.9
+
+# Visualization
+streamlit==1.28.2
+plotly==5.18.0
+folium==0.15.0
+streamlit-folium==0.15.1
+
+# Configuration
+pyyaml==6.0.1
+python-dotenv==1.0.0
+
+# Networking (for NTRIP)
+requests==2.31.0
+
+# Logging
+colorlog==6.8.0
+
+# Time series
+pyarrow==14.0.1
+fastparquet==2023.10.1
+
+# Testing
+pytest==7.4.3
